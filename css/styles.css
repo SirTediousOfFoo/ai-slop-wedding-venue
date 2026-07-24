@@ -68,7 +68,7 @@ a {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #555;
+    color: #444;
     transition: color 0.3s ease;
 }
 
@@ -111,7 +111,7 @@ a {
     letter-spacing: 0.3em;
     text-transform: uppercase;
     margin-bottom: 1rem;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .hero__title {
@@ -225,7 +225,7 @@ a {
 
 .about__card p {
     font-size: 0.95rem;
-    color: #666;
+    color: #555;
 }
 
 /* ---------- CSS-Only Carousel (Scroll Snap) ---------- */
@@ -633,7 +633,7 @@ details p {
 }
 
 .footer__links a {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 0.8rem;
