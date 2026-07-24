@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Sent — Elder & Oak</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__logo">Elder & Oak</div>
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <label for="nav-toggle" class="nav__hamburger">&#9776;</label>
+        <ul class="nav__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/facilities.html">Venues</a></li>
+            <li><a href="/inquiry.html">Inquire</a></li>
+        </ul>
+    </nav>
+
+    <section class="section confirmed">
+        <div class="confirmed__icon">&#10084;</div>
+
+        {{if .Name}}
+            <h2>Thank you, {{.Name}}</h2>
+        {{else}}
+            <h2>Inquiry Received</h2>
+        {{end}}
+
+        <div class="divider"><span class="divider__line"></span><span class="divider__flower">&#10052;</span><span class="divider__line"></span></div>
+
+        <p>Your inquiry has been received. We'll review your date and get back to you within 24 hours with pricing, availability, and next steps.</p>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <p style="font-size: 0.9rem; color: #c8a96e; margin-bottom: 1rem;">
+                {{if .Date}}
+                    Date noted: <strong>{{.Date}}</strong>
+                {{else}}
+                    No date set — that's perfectly fine!
+                {{end}}
+            </p>
+            <a href="/" class="btn btn--dark">Return Home</a>
+        </div>
+    </section>
+
+    <!-- ---- Footer ---- -->
+    <footer class="footer">
+        <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/facilities.html">Venues</a></li>
+            <li><a href="/inquiry.html">Inquire</a></li>
+        </ul>
+        <div class="divider"><span class="divider__line"></span><span class="divider__flower">&#10052;</span><span class="divider__line"></span></div>
+        <p>&copy; 2025 Elder & Oak — Sonoma County, California</p>
+    </footer>
+
+</body>
+</html>

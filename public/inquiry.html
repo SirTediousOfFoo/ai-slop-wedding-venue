@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquire — Elder & Oak</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__logo">Elder & Oak</div>
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <label for="nav-toggle" class="nav__hamburger">&#9776;</label>
+        <ul class="nav__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/facilities.html">Venues</a></li>
+            <li><a href="/inquiry.html">Inquire</a></li>
+        </ul>
+    </nav>
+
+    <section class="section inquiry">
+        <h2 class="section__heading">Begin Your Inquiry</h2>
+        <p class="section__sub">Fill out the form below and we'll respond within 24 hours</p>
+
+        <form class="inquiry__form" action="/inquiry" method="POST">
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" id="full_name" name="full_name" required placeholder="Sarah & James Mitchell">
+            </div>
+
+            <div class="form-group__row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="date">Wedding Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+            </div>
+
+            <div class="form-group__row">
+                <div class="form-space">
+                    <label for="guests">Estimated Guests</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select...</option>
+                        <option value="50-100">50 – 100</option>
+                        <option value="100-150">100 – 150</option>
+                        <option value="150-200">150 – 200</option>
+                        <option value="200-300">200 – 300</option>
+                        <option value="300+">300+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="venue">Preferred Venue</label>
+                    <select id="venue" name="venue">
+                        <option value="">Select...</option>
+                        <option value="great-barn">The Great Barn</option>
+                        <option value="garden-terrace">The Garden Terrace</option>
+                        <option value="lakeside-pergola">Lakeside Pergola</option>
+                        <option value="all-three">All Three Spaces</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Anything else we should know?</label>
+                <textarea id="message" name="message" placeholder="Tell us about your vision, any special requests, or questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--submit">Send Inquiry</button>
+        </form>
+    </section>
+
+    <!-- ---- Footer ---- -->
+    <footer class="footer">
+        <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/facilities.html">Venues</a></li>
+            <li><a href="/inquiry.html">Inquire</a></li>
+        </ul>
+        <div class="divider"><span class="divider__line"></span><span class="divider__flower">&#10052;</span><span class="divider__line"></span></div>
+        <p>&copy; 2025 Elder & Oak — Sonoma County, California</p>
+    </footer>
+
+</body>
+</html>

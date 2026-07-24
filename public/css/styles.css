@@ -1,0 +1,724 @@
+/* ============================================================
+   ELDER & OAK — Wedding Venue Website
+   Pure CSS interactions. Near zero JavaScript.
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #2c2c2c;
+    background: #faf8f5;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #3a4a2f;
+    font-weight: 400;
+}
+
+.nav__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.nav__links a:hover {
+    color: #c8a96e;
+}
+
+/* Mobile hamburger (pure CSS) */
+.nav__toggle {
+    display: none;
+}
+
+.nav__hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #3a4a2f;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+                url('/static/assets/venue4.jpg') center/cover no-repeat;
+    color: #fff;
+}
+
+.hero__overlay {
+    max-width: 700px;
+}
+
+.hero__subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+}
+
+.hero__title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero__tagline {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #2c2c2c;
+}
+
+.btn--gold {
+    border-color: #c8a96e;
+    color: #c8a96e;
+}
+
+.btn--gold:hover {
+    background: #c8a96e;
+    color: #2c2c2c;
+}
+
+.btn--dark {
+    border-color: #3a4a2f;
+    color: #3a4a2f;
+}
+
+.btn--dark:hover {
+    background: #3a4a2f;
+    color: #fff;
+}
+
+/* ---------- Section Defaults ---------- */
+.section {
+    padding: 5rem 2rem;
+}
+
+.section__heading {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: #3a4a2f;
+    margin-bottom: 0.5rem;
+}
+
+.section__sub {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+/* ---------- About Section ---------- */
+.about {
+    background: #fff;
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about__card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.about__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about__card h3 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3a4a2f;
+    margin-bottom: 0.75rem;
+}
+
+.about__card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ---------- CSS-Only Carousel (Scroll Snap) ---------- */
+.carousel {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.carousel__track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel__track::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel__track::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.carousel__track::-webkit-scrollbar-thumb {
+    background: #c8a96e;
+    border-radius: 3px;
+}
+
+.carousel__item {
+    flex: 0 0 calc(50% - 0.75rem);
+    scroll-snap-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel__item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.carousel__item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.carousel__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 1.5rem 1.2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+}
+
+/* Mobile: single item scroll */
+@media (max-width: 600px) {
+    .carousel__item {
+        flex: 0 0 calc(85% - 0.75rem);
+    }
+
+    .carousel__item img {
+        height: 260px;
+    }
+}
+
+/* ---------- Pure CSS Lightbox (via :target) ---------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox__img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.lightbox__close:hover {
+    opacity: 1;
+}
+
+/* ---------- Pure CSS Accordion (Details/Summary) ---------- */
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1.2rem 0;
+}
+
+summary {
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3a4a2f;
+    transition: color 0.3s;
+}
+
+summary:hover {
+    color: #c8a96e;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.3rem;
+    color: #c8a96e;
+    transition: transform 0.3s;
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+details p {
+    margin-top: 0.75rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ---------- Gallery Grid ---------- */
+.gallery {
+    background: #fff;
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery__item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery__item a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(58, 74, 47, 0.2);
+    transition: background 0.3s;
+}
+
+.gallery__item:hover a::after {
+    background: rgba(58, 74, 47, 0.1);
+}
+
+/* ---------- Venues Section ---------- */
+.venues__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.venue-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.venue-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.venue-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.venue-card__body {
+    padding: 1.5rem;
+}
+
+.venue-card h3 {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    color: #3a4a2f;
+    margin-bottom: 0.5rem;
+}
+
+.venue-card__details {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.venue-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ---------- Testimonials ---------- */
+.testimonials {
+    background: #3a4a2f;
+    color: #fff;
+}
+
+.testimonials .section__heading {
+    color: #fff;
+}
+
+.testimonials .section__sub {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    text-align: center;
+    padding: 2rem;
+}
+
+.testimonial__text {
+    font-style: italic;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.testimonial__author {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* ---------- Contact / Inquiry Form ---------- */
+.inquiry {
+    background: #fff;
+}
+
+.inquiry__form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    background: #faf8f5;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #c8a96e;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-group__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group__row .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.btn--submit {
+    background: #3a4a2f;
+    color: #fff;
+    border-color: #3a4a2f;
+    width: 100%;
+}
+
+.btn--submit:hover {
+    background: #2a3522;
+    color: #fff;
+}
+
+/* ---------- Confirmed Page ---------- */
+.confirmed {
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.confirmed__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.confirmed h2 {
+    font-size: 2rem;
+    color: #3a4a2f;
+    margin-bottom: 1rem;
+}
+
+.confirmed p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background: #1e2a1a;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.85rem;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.footer__links a {
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.footer__links a:hover {
+    color: #c8a96e;
+}
+
+/* ---------- Divider ---------- */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.divider__line {
+    width: 60px;
+    height: 1px;
+    background: #c8a96e;
+}
+
+.divider__flower {
+    font-size: 1rem;
+    color: #c8a96e;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+    .nav__links { display: none; }
+
+    .nav__hamburger {
+        display: block;
+    }
+
+    /* Mobile menu (pure CSS checkbox hack) */
+    #nav-toggle:checked ~ .nav__links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(250, 248, 245, 0.98);
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .nav__toggle { display: none; }
+
+    .hero { min-height: 75vh; padding: 3rem 1.5rem; }
+
+    .section { padding: 3.5rem 1.5rem; }
+
+    .form-group__row {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery__grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .gallery__item img { height: 180px; }
+
+    .venues__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav { padding: 0.8rem 1rem; }
+    .nav__logo { font-size: 1.1rem; }
+    .hero__title { font-size: 2rem; }
+
+    .carousel__item img { height: 220px; }
+
+    .gallery__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .gallery__item img { height: 140px; }
+
+    .testimonial { padding: 1rem; }
+}

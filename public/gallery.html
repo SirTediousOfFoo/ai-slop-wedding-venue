@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Elder & Oak</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <!-- ---- Navigation ---- -->
+    <nav class="nav">
+        <div class="nav__logo">Elder & Oak</div>
+        <input type="checkbox" id="nav-toggle" class="nav__toggle">
+        <label for="nav-toggle" class="nav__hamburger">&#9776;</label>
+        <ul class="nav__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/facilities.html">Venues</a></li>
+            <li><a href="/inquiry.html">Inquire</a></li>
+        </ul>
+    </nav>
+
+    <!-- ---- Header ---- -->
+    <section class="section" style="padding-top: 3rem;">
+        <h2 class="section__heading">Gallery</h2>
+        <p class="section__sub">Click any image to view full-size</p>
+
+        <div class="gallery__grid">
+            <!-- Row 1 -->
+            <div class="gallery__item"><a href="#lb-hero" target="_self"><img src="/static/assets/venue1.jpg" alt="Barn exterior"></a></div>
+            <div class="gallery__item"><a href="#lb-garden" target="_self"><img src="/static/assets/venue2.jpg" alt="Garden ceremony"></a></div>
+            <div class="gallery__item"><a href="#lb-reception" target="_self"><img src="/static/assets/venue3.jpg" alt="Reception tent"></a></div>
+            <div class="gallery__item"><a href="#lb-sunset" target="_self"><img src="/static/assets/venue4.jpg" alt="Vineyard sunset"></a></div>
+            <!-- Row 2 -->
+            <div class="gallery__item"><a href="#lb-detail1" target="_self"><img src="/static/assets/detail1.jpg" alt="Table decor"></a></div>
+            <div class="gallery__item"><a href="#lb-detail2" target="_self"><img src="/static/assets/detail2.jpg" alt="Bride preparation"></a></div>
+            <div class="gallery__item"><a href="#lb-detail3" target="_self"><img src="/static/assets/venue5.jpg" alt="Courtyard"></a></div>
+            <div class="gallery__item"><a href="#lb-detail4" target="_self"><img src="/static/assets/venue6.jpg" alt="Night lighting"></a></div>
+        </div>
+    </section>
+
+    <!-- ---- Pure CSS Lightbox Modals (via :target) ---- -->
+    <div id="lb-hero" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/venue1.jpg" alt="Barn exterior">
+    </div>
+    <div id="lb-garden" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/venue2.jpg" alt="Garden ceremony">
+    </div>
+    <div id="lb-reception" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/venue3.jpg" alt="Reception tent">
+    </div>
+    <div id="lb-sunset" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/venue4.jpg" alt="Vineyard sunset">
+    </div>
+    <div id="lb-detail1" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/detail1.jpg" alt="Table decor">
+    </div>
+    <div id="lb-detail2" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/detail2.jpg" alt="Bride preparation">
+    </div>
+    <div id="lb-detail3" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/venue5.jpg" alt="Courtyard">
+    </div>
+    <div id="lb-detail4" class="lightbox">
+        <a href="#" class="lightbox__close">&times;</a>
+        <img class="lightbox__img" src="/static/assets/venue6.jpg" alt="Night lighting">
+    </div>
+
+    <!-- ---- CTA ---- -->
+    <section class="section" style="text-align: center;">
+        <h2 class="section__heading">See It in Person</h2>
+        <p class="section__sub">Schedule a private tour — no obligation</p>
+        <a href="/inquiry.html" class="btn btn--gold">Request a Tour</a>
+    </section>
+
+    <!-- ---- Footer ---- -->
+    <footer class="footer">
+        <ul class="footer__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/facilities.html">Venues</a></li>
+            <li><a href="/inquiry.html">Inquire</a></li>
+        </ul>
+        <div class="divider"><span class="divider__line"></span><span class="divider__flower">&#10052;</span><span class="divider__line"></span></div>
+        <p>&copy; 2025 Elder & Oak — Sonoma County, California</p>
+    </footer>
+
+</body>
+</html>

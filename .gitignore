@@ -1,0 +1,7 @@
+fly.toml
+Dockerfile
+.fly/
+.env
+*.log
+go.mod
+go.sum
